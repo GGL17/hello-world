@@ -86,5 +86,53 @@ void Stiva<T>::pop()
 
 int main()
 {
- 
+ Stack<double> doubleStack(5);
+ double f = 1.1;
+ cout << "Inserarea elementelor in doubleStack\n";
+ while(doubleStack.push(f))
+ {
+ cout << f << ' ';
+ f += 1.1;
+ }
+ cout << "\nStiva este plina. "
+ << "Nu se mai poate insera elementul " << f
+ << "\n\nExtragerea elementelor din doubleStack\n";
+
+ while(doubleStack.pop(f))
+ cout << f << ' ';
+ cout << "\nStiva este goala. "
+ << "Nu se mai pot extrage elemente\n";
+
+ Stack<int> intStack;
+ int i = 1;
+ cout << "\nInserarea elementelor in intStack\n";
+ while(intStack.push(i))
+ {
+ cout << i << ' ';
+ ++i;
+ }
+ cout << "\nStiva este plina. "
+ << "Nu se mai poate insera elementul " << i
+ << "\n\nExtragerea elementelor din intStack\n";
+
+ while(intStack.pop(i))
+ cout << i << ' ';
+ cout << "\nStiva este goala. "
+ << "Nu se mai pot extrage elemente\n";
+
+
+
+
+ Stiva<int> s;
+    s.push(4);
+    s.push(5);
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    s.pop();
+    if(s.isEmpty())
+        cout<<"stiva este goala";
+    else
+        cout<<"nu";
+ return 0;
 }
